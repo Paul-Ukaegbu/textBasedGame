@@ -1,6 +1,10 @@
 print('''Welcome to your entrance exam for Draco Academy!
 This exam will determine if you are worthy of acceptance into the school. 
-You will be navigating 8 rooms, picking up weapons''')
+You will be navigating 8 rooms, picking up all weapons and health 
+needed to defeat the monster that will be waiting for you at the final room. ''')
+
+playerItemsCollected = []
+
 roomAndWeapons = {
     "Room1":"Sword",
     "Room2":"Shield",
@@ -11,6 +15,7 @@ roomAndWeapons = {
 }
 
 def roomOne():
+    print("Hi welcome to the wall of Einstein")
     return 0
 
 def roomTwo():
