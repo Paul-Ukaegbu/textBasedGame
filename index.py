@@ -12,7 +12,7 @@ roomAndWeapons = {
     "Room2":"Shield",
     "Room4":"Helmet",
     "Room7":"Body Armor",
-    "Room5":"Veggies",
+    "Room5":"Carrots",
     "Room6":"Time Amulet"
 }
 
@@ -22,6 +22,7 @@ def roomOne():
     getSword = input("Would you like to add this sword to your bag pack? ")
     if getSword  == 'Y':
         bagPack.append(roomAndWeapons["Room1"])
+        del roomAndWeapons['Room1']
         print(f"Your bag pack now has {bagPack}")
         print()
     
@@ -37,7 +38,23 @@ def roomOne():
         print("Enter a valid direction.")
 
 def roomTwo():
-    print('''Hi welcome to the hall of Faraday.''')
+    print()
+    print('''Hi welcome to the hall of Faraday! In this room there is a Shield.''')
+    getHelmet = input("Would you like to add this shield to your bag pack? ")
+    if getShield  == 'Y' or 'y':
+        bagPack.append(roomAndWeapons["Room2"])
+        del roomAndWeapons['Room2']
+        print(f"Your bag pack now has {bagPack}")
+        print()
+    
+    print("You can only go east. This should take you back to the main room")
+    enterDirection = input("What direction would you like to go? ")
+    if enterDirection == "go east":
+        return roomThree()
+    elif enterDirection == "go north" or "go west" or "go south":
+        print("You can't go that direction.")
+    else:
+        print("Enter a valid direction.")
     #North and east
     return 0
 
@@ -61,19 +78,46 @@ def roomThree():
             print("Enter a valid room")
 
 def roomFour():
-    print('''Hi welcome to the hall of Nikola Tesla.''')
+    print()
+    print('''Hi welcome to the hall of Nikola Tesla! In this room there is an Helmet.''')
+    getHelmet = input("Would you like to add this sword to your bag pack? ")
+    if getHelmet  == 'Y' or 'y':
+        bagPack.append(roomAndWeapons["Room4"])
+        del roomAndWeapons['Room4']
+        print(f"Your bag pack now has {bagPack}")
+        print()
+    
+    print("You can only go east. This should take you back to the main room")
+    enterDirection = input("What direction would you like to go? ")
+    if enterDirection == "go east":
+        return roomThree()
+    elif enterDirection == "go north" or "go west" or "go south":
+        print("You can't go that direction.")
+    else:
+        print("Enter a valid direction.")
     #east
-    return 0
 
 def roomFive():
-    print('''Hi welcome to the wall of Mercedez.''')
+    print()
+    print('''Hi welcome to the wall of Mercedez! In this room there are carrots.''') 
+    getSword = input("Would you like to add carrots to your bag pack? ")
+    if getSword  == 'Y' or 'y':
+        bagPack.append(roomAndWeapons["Room5"])
+        del roomAndWeapons['Room5']
+        print(f"Your bag pack now has {bagPack}")
+        print()
+    
+    print("Only directions to go are north or west. If you go west you will be facing the monster.")
+    enterDirection = input("What direction would you like to go? ")
+    if enterDirection == "go west":
+        return roomThree()
+    elif enterDirection == "go north":
+        return roomEight()
     #west and north 
-    return 0
 
 def roomSix():
     print('''Hi welcome to the wall of Einstein.''')
     #west
-    return 0
 
 def roomSeven():
     print()
@@ -81,6 +125,7 @@ def roomSeven():
     getSword = input("Would you like to add this body armor to your bag pack? ")
     if getSword  == 'Y':
         bagPack.append(roomAndWeapons["Room7"])
+        del roomAndWeapons['Room7']
         print(f"Your bag pack now has {bagPack}")
         print()
     
@@ -94,12 +139,15 @@ def roomSeven():
     #west
 
 def roomEight():
-    print('''Hi welcome to the wall of Einstein.''')
+    print('''Now you face the monster Dragon. The only way to defeat the moster is to have all items.
+    Let's see if you cam prepared''')
+    print(f"Items you have are {bagPack}")
+    if bagPack >= 6:
+        print("You win! you have the items to defeat the monster")
+    else:
+        print("You lose! try again next time.")
     #monster room
-    return 0
-
 roomThree()
 
-
-# for room in roomAndWeapons:
-#     print(roomAndWeapons[room])
+for room in roomAndWeapons:
+    print(roomAndWeapons[room])
