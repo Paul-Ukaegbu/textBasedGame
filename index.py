@@ -8,15 +8,16 @@ needed to defeat the monster that will be waiting for you at the final room. '''
 bagPack = []
 
 roomAndWeapons = {
-    "Room1":"Sword",
-    "Room2":"Shield",
-    "Room4":"Helmet",
-    "Room7":"Body Armor",
-    "Room5":"Carrots",
-    "Room6":"Time Amulet"
+    "Room1": "Sword",
+    "Room2": "Shield",
+    "Room4": "Helmet",
+    "Room7": "Body Armor",
+    "Room5": "Carrots",
+    "Room6": "Time Amulet"
 }
 
-def roomOne():
+
+def room_one():
     print()
     print('''Hi welcome to the hall of Einstein!In this room there is a Sword.''')
     getSword = input("Would you like to add this sword to your bag pack? ")
@@ -27,21 +28,22 @@ def roomOne():
         print()
     
     print("You can go east or you can go south. I'll recommend going east first ;)")
-    enterDirection = input("What direction would you like to go? ")
-    if enterDirection == "go east":
+    enter_direction = input("What direction would you like to go? ")
+    if enter_direction == "go east":
         return roomSeven()
-    elif enterDirection == "go south":
+    elif enter_direction == "go south":
         return roomThree()
-    elif enterDirection == "go north" or "go west":
+    elif enter_direction == "go north" or "go west":
         print("You can't go that direction.")
     else:
         print("Enter a valid direction.")
 
-def roomTwo():
+
+def room_two():
     print()
     print('''Hi welcome to the hall of Faraday! In this room there is a Shield.''')
-    getHelmet = input("Would you like to add this shield to your bag pack? ")
-    if getShield  == 'Y' or 'y':
+    get_shield = input("Would you like to add this shield to your bag pack? ")
+    if get_shield  == 'Y' or 'y':
         bagPack.append(roomAndWeapons["Room2"])
         del roomAndWeapons['Room2']
         print(f"Your bag pack now has {bagPack}")
@@ -57,6 +59,7 @@ def roomTwo():
         print("Enter a valid direction.")
     #North and east
     return 0
+
 
 def roomThree():
     count = 0
@@ -77,6 +80,7 @@ def roomThree():
         else:
             print("Enter a valid room")
 
+
 def roomFour():
     print()
     print('''Hi welcome to the hall of Nikola Tesla! In this room there is an Helmet.''')
@@ -86,7 +90,7 @@ def roomFour():
         del roomAndWeapons['Room4']
         print(f"Your bag pack now has {bagPack}")
         print()
-    
+
     print("You can only go east. This should take you back to the main room")
     enterDirection = input("What direction would you like to go? ")
     if enterDirection == "go east":
@@ -96,6 +100,7 @@ def roomFour():
     else:
         print("Enter a valid direction.")
     #east
+
 
 def roomFive():
     print()
@@ -115,9 +120,11 @@ def roomFive():
         return roomEight()
     #west and north 
 
+
 def roomSix():
     print('''Hi welcome to the wall of Einstein.''')
     #west
+
 
 def roomSeven():
     print()
@@ -128,15 +135,16 @@ def roomSeven():
         del roomAndWeapons['Room7']
         print(f"Your bag pack now has {bagPack}")
         print()
-    
+
     print("Only way to go now is West. Back to Einstein hall.")
     enterDirection = input("What direction would you like to go? ")
     if enterDirection == "go west":
-        return roomOne()
+        return room_one()
     else:
         print("There is no way or room to go except west")
 
-    #west
+    # west
+
 
 def roomEight():
     print('''Now you face the monster Dragon. The only way to defeat the moster is to have all items.
@@ -146,7 +154,9 @@ def roomEight():
         print("You win! you have the items to defeat the monster")
     else:
         print("You lose! try again next time.")
-    #monster room
+    # monster room
+
+
 roomThree()
 
 for room in roomAndWeapons:
