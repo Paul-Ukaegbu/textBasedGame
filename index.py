@@ -20,19 +20,19 @@ roomAndWeapons = {
 def room_one():
     print()
     print('''Hi welcome to the hall of Einstein!In this room there is a Sword.''')
-    getSword = input("Would you like to add this sword to your bag pack? ")
-    if getSword  == 'Y':
+    get_sword = input("Would you like to add this sword to your bag pack? ")
+    if get_sword == 'Y':
         bagPack.append(roomAndWeapons["Room1"])
         del roomAndWeapons['Room1']
         print(f"Your bag pack now has {bagPack}")
         print()
-    
+
     print("You can go east or you can go south. I'll recommend going east first ;)")
     enter_direction = input("What direction would you like to go? ")
     if enter_direction == "go east":
-        return roomSeven()
+        return room_seven()
     elif enter_direction == "go south":
-        return roomThree()
+        return room_three()
     elif enter_direction == "go north" or "go west":
         print("You can't go that direction.")
     else:
@@ -43,102 +43,102 @@ def room_two():
     print()
     print('''Hi welcome to the hall of Faraday! In this room there is a Shield.''')
     get_shield = input("Would you like to add this shield to your bag pack? ")
-    if get_shield  == 'Y' or 'y':
+    if get_shield == 'Y' or 'y':
         bagPack.append(roomAndWeapons["Room2"])
         del roomAndWeapons['Room2']
         print(f"Your bag pack now has {bagPack}")
         print()
-    
+
     print("You can only go east. This should take you back to the main room")
-    enterDirection = input("What direction would you like to go? ")
-    if enterDirection == "go east":
-        return roomThree()
-    elif enterDirection == "go north" or "go west" or "go south":
+    enter_direction = input("What direction would you like to go? ")
+    if enter_direction == "go east":
+        return room_three()
+    elif enter_direction == "go north" or "go west" or "go south":
         print("You can't go that direction.")
     else:
         print("Enter a valid direction.")
-    #North and east
+    # North and east
     return 0
 
 
-def roomThree():
+def room_three():
     count = 0
     print()
     print('''Welcome to the main room. In this room you can go in any direction.''')
     
-    readyToPlay = input("Are you ready to play? ")
-    while readyToPlay != 'no':
-        enterDirection = input("Enter a direction ('go north', 'go east', 'go west', 'go south'): ")
-        if enterDirection == 'go north':
-            return roomOne()
-        elif enterDirection == 'go south':
-            return roomTwo()
-        elif enterDirection == 'go west':
-            return roomFour()
-        elif enterDirection == 'go east':
-            return roomFive()
+    ready_to_play = input("Are you ready to play? ")
+    while ready_to_play != 'no':
+        enter_direction = input("Enter a direction ('go north', 'go east', 'go west', 'go south'): ")
+        if enter_direction == 'go north':
+            return room_one()
+        elif enter_direction == 'go south':
+            return room_two()
+        elif enter_direction == 'go west':
+            return room_four()
+        elif enter_direction == 'go east':
+            return room_five()
         else:
             print("Enter a valid room")
 
 
-def roomFour():
+def room_four():
     print()
     print('''Hi welcome to the hall of Nikola Tesla! In this room there is an Helmet.''')
-    getHelmet = input("Would you like to add this sword to your bag pack? ")
-    if getHelmet  == 'Y' or 'y':
+    get_helmet = input("Would you like to add this sword to your bag pack? ")
+    if get_helmet == 'Y' or 'y':
         bagPack.append(roomAndWeapons["Room4"])
         del roomAndWeapons['Room4']
         print(f"Your bag pack now has {bagPack}")
         print()
 
     print("You can only go east. This should take you back to the main room")
-    enterDirection = input("What direction would you like to go? ")
-    if enterDirection == "go east":
-        return roomThree()
-    elif enterDirection == "go north" or "go west" or "go south":
+    enter_direction = input("What direction would you like to go? ")
+    if enter_direction == "go east":
+        return room_three()
+    elif enter_direction == "go north" or "go west" or "go south":
         print("You can't go that direction.")
     else:
         print("Enter a valid direction.")
     #east
 
 
-def roomFive():
+def room_five():
     print()
     print('''Hi welcome to the wall of Mercedez! In this room there are carrots.''') 
-    getSword = input("Would you like to add carrots to your bag pack? ")
-    if getSword  == 'Y' or 'y':
+    get_carrots = input("Would you like to add carrots to your bag pack? ")
+    if get_carrots == 'Y' or 'y':
         bagPack.append(roomAndWeapons["Room5"])
         del roomAndWeapons['Room5']
         print(f"Your bag pack now has {bagPack}")
         print()
-    
+
     print("Only directions to go are north or west. If you go west you will be facing the monster.")
-    enterDirection = input("What direction would you like to go? ")
-    if enterDirection == "go west":
-        return roomThree()
-    elif enterDirection == "go north":
-        return roomEight()
-    #west and north 
+    enter_direction = input("What direction would you like to go? ")
+    if enter_direction == "go west":
+        return room_three()
+    elif enter_direction == "go north":
+        return room_eight()
+    # west and north
 
 
-def roomSix():
+def room_six():
     print('''Hi welcome to the wall of Einstein.''')
-    #west
+    # west
 
 
-def roomSeven():
+def room_seven():
     print()
     print('''Hi welcome to the Hall of Dumbledore. In this room there is a Body Armor.''')
-    getSword = input("Would you like to add this body armor to your bag pack? ")
-    if getSword  == 'Y':
+    get_body_armor = input("Would you like to add this body armor to your bag pack? ")
+    if get_body_armor == 'Y':
         bagPack.append(roomAndWeapons["Room7"])
         del roomAndWeapons['Room7']
         print(f"Your bag pack now has {bagPack}")
         print()
 
     print("Only way to go now is West. Back to Einstein hall.")
-    enterDirection = input("What direction would you like to go? ")
-    if enterDirection == "go west":
+    enter_direction = input("What direction would you like to go? ")
+    if enter_direction == "go west":
         return room_one()
     else:
         print("There is no way or room to go except west")
@@ -146,8 +146,8 @@ def roomSeven():
     # west
 
 
-def roomEight():
-    print('''Now you face the monster Dragon. The only way to defeat the moster is to have all items.
+def room_eight():
+    print('''Now you face the monster Dragon. The only way to defeat the monster is to have all items.
     Let's see if you cam prepared''')
     print(f"Items you have are {bagPack}")
     if bagPack >= 6:
@@ -157,7 +157,7 @@ def roomEight():
     # monster room
 
 
-roomThree()
+room_three()
 
 for room in roomAndWeapons:
     print(roomAndWeapons[room])
