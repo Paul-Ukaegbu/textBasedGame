@@ -84,7 +84,7 @@ def room_three():
 def room_four():
     print()
     print('''Hi welcome to the hall of Nikola Tesla! In this room there is an Helmet.''')
-    get_helmet = input("Would you like to add this sword to your bag pack? ")
+    get_helmet = input("Would you like to add this helmet to your bag pack? ")
     if get_helmet == 'Y' or 'y':
         bagPack.append(roomAndWeapons["Room4"])
         del roomAndWeapons['Room4']
@@ -150,7 +150,7 @@ def room_eight():
     print('''Now you face the monster Dragon. The only way to defeat the monster is to have all items.
     Let's see if you cam prepared''')
     print(f"Items you have are {bagPack}")
-    if bagPack >= 6:
+    if len(bagPack) >= 6:
         print("You win! you have the items to defeat the monster")
     else:
         print("You lose! try again next time.")
